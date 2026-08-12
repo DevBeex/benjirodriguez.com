@@ -1,0 +1,25 @@
+<section id="sobre-mi" class="section-space" appRevealOnScroll>
+  <div class="container-page">
+    <app-section-heading [title]="i18n.t().aboutTitle" icon="user" />
+
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12">
+      <p class="text-base leading-relaxed text-ink-400 sm:text-lg">
+        {{ i18n.t().aboutBody }}
+      </p>
+
+      <div class="grid grid-cols-2 gap-3 sm:gap-4">
+        @for (stat of stats; track stat.label) {
+          <article class="card-surface p-4 sm:p-5">
+            <p class="text-2xl font-bold text-brand-400 sm:text-3xl">
+              {{ stat.value }}
+              @if (stat.emoji) {
+                <span class="ml-1 text-xl">{{ stat.emoji }}</span>
+              }
+            </p>
+            <p class="mt-1 text-sm text-ink-400">{{ stat.label }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>
