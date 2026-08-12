@@ -1,0 +1,45 @@
+<footer class="border-t border-white/5 bg-surface-950">
+  <div class="container-page section-space !py-12">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      <div>
+        <a href="#inicio" class="flex items-center gap-2 text-base font-bold">
+          <span class="text-brand-400">&lt;/&gt;</span>
+          <span>Benji <span class="text-brand-400">Rodríguez</span></span>
+        </a>
+        <p class="mt-2 text-sm text-ink-400">{{ i18n.t().role }}</p>
+        <div class="mt-4 flex gap-2">
+          @for (link of socialLinks; track link.href) {
+            <app-social-link [href]="link.href" [icon]="link.icon" [label]="link.label" />
+          }
+        </div>
+      </div>
+
+      <div class="sm:justify-self-end lg:justify-self-center">
+        <p class="mb-3 text-sm font-semibold text-ink-100">{{ i18n.t().navigation }}</p>
+        <div class="grid grid-cols-2 gap-x-8 gap-y-2">
+          <div class="flex flex-col gap-2">
+            @for (item of leftLinks; track item.href) {
+              <a [href]="item.href" class="text-sm text-ink-400 transition hover:text-brand-300">
+                {{ item.label }}
+              </a>
+            }
+          </div>
+          <div class="flex flex-col gap-2">
+            @for (item of rightLinks; track item.href) {
+              <a [href]="item.href" class="text-sm text-ink-400 transition hover:text-brand-300">
+                {{ item.label }}
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mt-10 flex flex-col gap-2 border-t border-white/5 pt-6 text-sm text-ink-500 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>{{ i18n.t().rights }}</p>
+      <p>{{ i18n.t().madeWith }}</p>
+    </div>
+  </div>
+</footer>

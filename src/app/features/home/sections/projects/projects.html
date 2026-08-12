@@ -1,0 +1,16 @@
+<section id="proyectos" class="section-space" appRevealOnScroll>
+  <div class="container-page">
+    <app-section-heading
+      [title]="i18n.t().projectsTitle"
+      icon="folder"
+      [actionLabel]="i18n.t().viewAllGithub"
+      actionHref="https://github.com/benjirodriguez"
+    />
+
+    <div class="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+      @for (project of projects; track project.title) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>

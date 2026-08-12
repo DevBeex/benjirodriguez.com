@@ -1,9 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
 @theme {
+  --spacing-18: 4.5rem;
+
+  --color-brand-300: #7dd3fc;
   --color-brand-400: #38bdf8;
   --color-brand-500: #0ea5e9;
-  --color-surface-950: #020617;
+  --color-brand-600: #0284c7;
+
+  --color-surface-950: #030712;
   --color-surface-900: #0f172a;
+  --color-surface-850: #111827;
+  --color-surface-800: #1e293b;
+
+  --color-ink-100: #f8fafc;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface-950 font-sans text-ink-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30 text-ink-100;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-white/5 bg-surface-900/80;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(rgba(148, 163, 184, 0.18) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
 }
