@@ -1,0 +1,11 @@
+<a
+  [attr.href]="isLink ? href : null"
+  [attr.download]="isLink ? downloadAttr : null"
+  [attr.target]="isLink ? target : null"
+  [attr.rel]="isLink && target === '_blank' ? 'noopener noreferrer' : null"
+  [attr.role]="isLink ? null : 'button'"
+  [attr.type]="isLink ? null : type"
+  [ngClass]="[baseClass, variants[variant], fullWidth ? 'w-full' : '']"
+>
+  <ng-content />
+</a>

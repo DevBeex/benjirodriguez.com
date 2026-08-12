@@ -1,3 +1,13 @@
-<h1 class="text-brand-400">
-  Benjamín Rodriguez
-</h1>
+<app-header [menuOpen]="menuOpen()" (menuToggle)="toggleMenu()" />
+<app-mobile-menu [open]="menuOpen()" (closed)="closeMenu()" />
+
+<main>
+  <app-hero />
+  <app-about />
+  <app-experience />
+  <app-projects />
+  <app-skills />
+  <app-contact />
+</main>
+
+<app-footer />

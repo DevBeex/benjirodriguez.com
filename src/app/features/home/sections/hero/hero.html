@@ -1,0 +1,48 @@
+<section id="inicio" class="relative overflow-hidden section-space">
+  <div class="pointer-events-none absolute inset-0 dot-grid opacity-40"></div>
+  <div
+    class="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-brand-600/20 blur-3xl"
+  ></div>
+
+  <div class="container-page relative max-w-3xl space-y-6">
+    <span
+      class="inline-flex items-center rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-300"
+    >
+      {{ i18n.t().role }}
+    </span>
+
+    <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+      {{ i18n.t().heroGreeting }}
+      <span class="mt-1 block">
+        {{ i18n.t().heroFirstName }}
+        <span class="text-brand-400">{{ i18n.t().heroLastName }}</span>
+      </span>
+    </h1>
+
+    <p class="max-w-xl text-base leading-relaxed text-ink-400 sm:text-lg">
+      {{ i18n.t().heroLead }}
+    </p>
+
+    <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <app-button variant="primary" href="#proyectos">
+        <span>{{ i18n.t().viewProjects }}</span>
+        <span aria-hidden="true">→</span>
+      </app-button>
+      <app-button variant="outline" [href]="cvPath" [download]="cvFilename">
+        <svg class="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A1.5 1.5 0 004.5 20.25h15a1.5 1.5 0 001.5-1.5V16.5M7.5 12l4.5 4.5L16.5 12M12 3.75v12.75" />
+        </svg>
+        <span>{{ i18n.t().downloadCv }}</span>
+      </app-button>
+    </div>
+
+    <div class="flex items-center gap-3 pt-2">
+      <span class="text-sm text-ink-500">{{ i18n.t().connect }}</span>
+      <div class="flex gap-2">
+        @for (link of socialLinks; track link.href) {
+          <app-social-link [href]="link.href" [icon]="link.icon" [label]="link.label" />
+        }
+      </div>
+    </div>
+  </div>
+</section>
