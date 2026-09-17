@@ -7,6 +7,7 @@ import { About } from './sections/about/about';
 import { ExperienceSection } from './sections/experience/experience';
 import { Projects } from './sections/projects/projects';
 import { Skills } from './sections/skills/skills';
+import { Education } from './sections/education/education';
 import { Contact } from './sections/contact/contact';
 
 @Component({
@@ -20,6 +21,7 @@ import { Contact } from './sections/contact/contact';
     ExperienceSection,
     Projects,
     Skills,
+    Education,
     Contact,
   ],
   templateUrl: './home.html',

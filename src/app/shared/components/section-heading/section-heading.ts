@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SectionHeading {
   @Input({ required: true }) title!: string;
-  @Input() icon: 'user' | 'briefcase' | 'folder' | 'layers' | 'mail' = 'user';
+  @Input() icon: 'user' | 'briefcase' | 'folder' | 'layers' | 'mail' | 'academic' =
+    'user';
   @Input() actionLabel?: string;
   @Input() actionHref?: string;
 }

@@ -19,13 +19,23 @@
       </span>
     </h1>
 
+    <p class="text-lg font-semibold text-brand-300 sm:text-xl">
+      {{ i18n.t().heroHeadline }}
+    </p>
+
     <p class="max-w-xl text-base leading-relaxed text-ink-400 sm:text-lg">
       {{ i18n.t().heroLead }}
     </p>
 
+    <div class="flex flex-wrap gap-2">
+      @for (tech of heroTechs; track tech) {
+        <app-technology-badge [label]="tech" [featured]="true" />
+      }
+    </div>
+
     <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-      <app-button variant="primary" href="#proyectos">
-        <span>{{ i18n.t().viewProjects }}</span>
+      <app-button variant="primary" href="#experiencia">
+        <span>{{ i18n.t().viewExperience }}</span>
         <span aria-hidden="true">→</span>
       </app-button>
       <app-button variant="outline" [href]="cvPath" [download]="cvFilename">
@@ -33,6 +43,9 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A1.5 1.5 0 004.5 20.25h15a1.5 1.5 0 001.5-1.5V16.5M7.5 12l4.5 4.5L16.5 12M12 3.75v12.75" />
         </svg>
         <span>{{ i18n.t().downloadCv }}</span>
+      </app-button>
+      <app-button variant="ghost" href="#contacto">
+        <span>{{ i18n.t().contactMe }}</span>
       </app-button>
     </div>
 

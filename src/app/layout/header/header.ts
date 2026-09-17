@@ -11,6 +11,9 @@ import { Button } from '../../shared/components/buttons/button';
   selector: 'app-header',
   imports: [Button],
   templateUrl: './header.html',
+  host: {
+    class: 'block',
+  },
 })
 export class Header {
   @Input() menuOpen = false;
