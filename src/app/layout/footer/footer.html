@@ -20,14 +20,14 @@
           <div class="flex flex-col gap-2">
             @for (item of leftLinks; track item.href) {
               <a [href]="item.href" class="text-sm text-ink-400 transition hover:text-brand-300">
-                {{ item.label }}
+                {{ i18n.t()[item.labelKey] }}
               </a>
             }
           </div>
           <div class="flex flex-col gap-2">
             @for (item of rightLinks; track item.href) {
               <a [href]="item.href" class="text-sm text-ink-400 transition hover:text-brand-300">
-                {{ item.label }}
+                {{ i18n.t()[item.labelKey] }}
               </a>
             }
           </div>

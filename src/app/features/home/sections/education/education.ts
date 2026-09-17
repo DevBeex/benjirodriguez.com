@@ -1,14 +1,13 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LanguageService } from '../../../../core/i18n/language.service';
 import { SectionHeading } from '../../../../shared/components/section-heading/section-heading';
 import { RevealOnScrollDirective } from '../../../../shared/directives/reveal-on-scroll.directive';
 
 @Component({
-  selector: 'app-about',
+  selector: 'app-education',
   imports: [SectionHeading, RevealOnScrollDirective],
-  templateUrl: './about.html',
+  templateUrl: './education.html',
 })
-export class About {
+export class Education {
   protected readonly i18n = inject(LanguageService);
-  protected readonly stats = computed(() => this.i18n.t().aboutStats);
 }

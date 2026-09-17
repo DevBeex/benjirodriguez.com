@@ -3,7 +3,7 @@
     <app-section-heading [title]="i18n.t().experienceTitle" icon="briefcase" />
 
     <ol class="relative space-y-6 border-l border-brand-500/30 pl-6 sm:pl-8">
-      @for (job of experiences; track job.title + job.period) {
+      @for (job of experiences(); track job.company + job.period) {
         <li class="relative">
           <span
             class="absolute -left-[1.9rem] top-5 h-3 w-3 rounded-full border-2 border-brand-400 bg-surface-950 sm:-left-[2.4rem]"
@@ -13,7 +13,9 @@
             <div class="flex flex-wrap items-center gap-2">
               <h3 class="text-lg font-semibold text-ink-100">
                 {{ job.title }}
-                <span class="font-normal text-ink-400">({{ job.type }})</span>
+                @if (job.type) {
+                  <span class="font-normal text-ink-400">({{ job.type }})</span>
+                }
               </h3>
               @if (job.current) {
                 <span
@@ -24,7 +26,10 @@
               }
             </div>
 
-            <p class="mt-1 text-sm text-ink-500">{{ job.period }}</p>
+            <p class="mt-1 text-sm font-medium text-ink-300">{{ job.company }}</p>
+            <p class="mt-1 text-sm text-ink-500">{{ job.period }} · {{ job.location }}</p>
+
+            <p class="mt-4 text-sm leading-relaxed text-ink-400">{{ job.description }}</p>
 
             <ul class="mt-4 space-y-2 text-sm leading-relaxed text-ink-400">
               @for (item of job.responsibilities; track item) {
@@ -34,6 +39,14 @@
                 </li>
               }
             </ul>
+
+            @if (job.technologies.length) {
+              <div class="mt-4 flex flex-wrap gap-2">
+                @for (tech of job.technologies; track tech) {
+                  <app-technology-badge [label]="tech" />
+                }
+              </div>
+            }
           </article>
         </li>
       }

@@ -2,8 +2,8 @@
   <div class="container-page">
     <app-section-heading [title]="i18n.t().skillsTitle" icon="layers" />
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-      @for (category of categories; track category.name) {
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      @for (category of categories; track category.id) {
         <article class="card-surface p-5">
           <div class="mb-4 flex items-center gap-2">
             <span
@@ -11,9 +11,14 @@
               aria-hidden="true"
             >
               @switch (category.icon) {
-                @case ('frontend') {
+                @case ('languages') {
                   <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L21 12l-3.75 5.25M6.75 17.25L3 12l3.75-5.25M14.25 4.5l-4.5 15" />
+                  </svg>
+                }
+                @case ('frontend') {
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
                   </svg>
                 }
                 @case ('backend') {
@@ -38,12 +43,14 @@
                 }
               }
             </span>
-            <h3 class="text-sm font-semibold text-ink-100">{{ category.name }}</h3>
+            <h3 class="text-sm font-semibold text-ink-100">
+              {{ i18n.t().skillCategories[category.id] }}
+            </h3>
           </div>
 
           <div class="flex flex-wrap gap-2">
             @for (item of category.items; track item) {
-              <app-technology-badge [label]="item" />
+              <app-technology-badge [label]="item" [featured]="isFeatured(item)" />
             }
           </div>
         </article>

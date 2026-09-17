@@ -1,0 +1,69 @@
+<section id="educacion" class="section-space" appRevealOnScroll>
+  <div class="container-page">
+    <app-section-heading [title]="i18n.t().educationTitle" icon="academic" />
+
+    <article class="card-surface mb-6 p-5 sm:p-6">
+      <p class="text-lg font-semibold text-ink-100">{{ i18n.t().educationDegree }}</p>
+      <p class="mt-1 text-sm font-medium text-ink-300">{{ i18n.t().educationInstitution }}</p>
+      <p class="mt-1 text-sm text-ink-500">{{ i18n.t().educationPeriod }}</p>
+    </article>
+
+    <div class="grid gap-4 lg:grid-cols-2">
+      <article class="card-surface border-brand-500/20 p-5 sm:p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-300">
+          {{ i18n.t().certificationsTitle }}
+        </p>
+        <h3 class="mt-3 text-lg font-semibold text-ink-100">
+          <a
+            [href]="i18n.t().oracleCertificationUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="transition hover:text-brand-300"
+          >
+            {{ i18n.t().oracleCertificationName }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </h3>
+        <p class="mt-1 text-sm font-medium text-brand-300">
+          {{ i18n.t().oracleCertificationCredential }}
+        </p>
+        <p class="mt-2 text-sm text-ink-500">{{ i18n.t().oracleCertificationIssuer }}</p>
+      </article>
+
+      <article class="card-surface p-5 sm:p-6">
+        <p class="text-xs font-semibold uppercase tracking-wide text-ink-500">
+          {{ i18n.t().coursesTitle }}
+        </p>
+        <p class="mt-3 text-sm font-medium text-ink-300">Platzi</p>
+        <ul class="mt-3 space-y-2 text-sm text-ink-400">
+          @for (course of i18n.t().platziCourses; track course.url) {
+            <li class="flex gap-2">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink-500"></span>
+              <a
+                [href]="course.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition hover:text-brand-300"
+              >
+                {{ course.name }}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </article>
+    </div>
+
+    <div class="mt-6">
+      <h3 class="mb-3 text-sm font-semibold text-ink-100">{{ i18n.t().languagesTitle }}</h3>
+      <div class="grid grid-cols-2 gap-3 sm:max-w-md">
+        @for (language of i18n.t().spokenLanguages; track language.name) {
+          <article class="card-surface p-4">
+            <p class="text-sm font-semibold text-ink-100">{{ language.name }}</p>
+            <p class="mt-1 text-sm text-ink-400">{{ language.level }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </div>
+</section>

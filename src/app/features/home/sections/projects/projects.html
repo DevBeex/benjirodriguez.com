@@ -1,14 +1,18 @@
-<section id="proyectos" class="section-space" appRevealOnScroll>
+<section id="referencias" class="section-space" appRevealOnScroll>
   <div class="container-page">
     <app-section-heading
-      [title]="i18n.t().projectsTitle"
+      [title]="i18n.t().referencesTitle"
       icon="folder"
       [actionLabel]="i18n.t().viewAllGithub"
-      actionHref="https://github.com/benjirodriguez"
+      actionHref="https://github.com/DevBeex"
     />
 
-    <div class="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
-      @for (project of projects; track project.title) {
+    <p class="mb-8 max-w-3xl text-base leading-relaxed text-ink-400 sm:text-lg">
+      {{ i18n.t().referencesLead }}
+    </p>
+
+    <div class="grid gap-4 sm:gap-5 md:grid-cols-2">
+      @for (project of projects(); track project.repositoryUrl) {
         <app-project-card [project]="project" />
       }
     </div>

@@ -1,5 +1,13 @@
+export type SkillCategoryId =
+  | 'languages'
+  | 'frontend'
+  | 'backend'
+  | 'database'
+  | 'devops'
+  | 'tools';
+
 export interface TechnologyCategory {
-  name: string;
-  icon: 'frontend' | 'backend' | 'database' | 'devops' | 'tools';
+  id: SkillCategoryId;
+  icon: SkillCategoryId;
   items: string[];
 }

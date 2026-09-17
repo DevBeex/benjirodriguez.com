@@ -7,35 +7,35 @@ export interface SocialLink {
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'GitHub',
-    href: 'https://github.com/benjirodriguez',
+    href: 'https://github.com/DevBeex',
     icon: 'github',
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/benjirodriguez',
+    href: 'https://www.linkedin.com/in/devbeex/',
     icon: 'linkedin',
   },
   {
     label: 'Email',
-    href: 'mailto:hola@benjirodriguez.com',
+    href: 'mailto:benjarod272@gmail.com',
     icon: 'email',
   },
 ];
 
 export const CONTACT_LINKS = [
   {
-    label: 'hola@benjirodriguez.com',
-    href: 'mailto:hola@benjirodriguez.com',
+    label: 'benjarod272@gmail.com',
+    href: 'mailto:benjarod272@gmail.com',
     icon: 'email' as const,
   },
   {
-    label: 'linkedin.com/in/benjirodriguez',
-    href: 'https://www.linkedin.com/in/benjirodriguez',
+    label: 'linkedin.com/in/devbeex',
+    href: 'https://www.linkedin.com/in/devbeex/',
     icon: 'linkedin' as const,
   },
   {
-    label: 'github.com/benjirodriguez',
-    href: 'https://github.com/benjirodriguez',
+    label: 'github.com/DevBeex',
+    href: 'https://github.com/DevBeex',
     icon: 'github' as const,
   },
 ];

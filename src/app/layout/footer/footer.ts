@@ -15,10 +15,10 @@ export class Footer {
   protected readonly i18n = inject(LanguageService);
 
   protected get leftLinks() {
-    return this.navItems.slice(0, 3);
+    return this.navItems.slice(0, 4);
   }
 
   protected get rightLinks() {
-    return this.navItems.slice(3);
+    return this.navItems.slice(4);
   }
 }
